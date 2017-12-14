@@ -1,0 +1,47 @@
+{
+  "name": "example_app",
+  "version": "1.0.0",
+  "description": "Example API",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register test/integration/*.test.js",
+    "apidoc": "apidoc -i src/app/ -o public/docs/",
+    "start": "nodemon src/server.js --ignore build --exec babel-node",
+    "seed": "babel-node src/lib/seed-loader.js",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && babel src/ -d build/",
+    "serve": "npm run build && node build/server.js"
+  },
+  "author": "Ikhsan Budiyanto <ikhsanbdy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "dotenv-safe": "^4.0.4",
+    "express": "^4.15.3",
+    "helmet": "^3.6.1",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.3",
+    "mongoose-paginate": "^5.0.3",
+    "request": "^2.82.0",
+    "request-promise": "^4.2.2",
+    "validator": "^8.0.0",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-async-to-module-method": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "faker": "^4.1.0",
+    "mocha": "^3.5.3",
+    "nodemon": "^1.12.1"
+  }
+}

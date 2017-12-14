@@ -1,0 +1,17 @@
+# Node modules
+node_modules
+
+# Env file
+.env
+
+# NPM error log
+npm-debug.log
+
+# Apidoc
+public/docs
+
+# Logs
+storage/logs/*.log
+
+# Build dir
+build
